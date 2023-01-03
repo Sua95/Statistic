@@ -4,8 +4,10 @@ Created on Sun Jan  1 21:17:45 2023
 
 @author: Sua
 """
+from collections import Counter
 
-sample_list = [15, 5]
+
+sample_list = [15, 10, 5, 45, 30, 30, 75]
 
 def mean(sample_list):
     sum_of_sample = 0
@@ -15,6 +17,13 @@ def mean(sample_list):
     return sum_of_sample/len_sample
     
 
+def median(sample_list):
+    sorted_list = sorted(sample_list)
+    len_sample = len(sorted_list)
+    mid_number = len_sample // 2
+    return sorted_list[mid_number]
 
-print(mean(sample_list))
-        
+def mode(sample_list):
+    sorted_list = Counter(sorted(sample_list))
+    mode = sorted_list.most_common(1)
+    return mode
