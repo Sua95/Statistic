@@ -7,14 +7,12 @@ Created on Sun Jan  1 21:17:45 2023
 from collections import Counter
 
 
-sample_list = [15, 10, 5, 45, 30, 30, 75]
+sample_list = [5 ,10, 9, 10, 9, 8, 10, 5, 7, 6, 9, 7, 8, 8, 8, 7]
+dictionary_list = {'arrow' : 1, 'sword': 2, 'shield' : 3}
 
 def mean(sample_list):
-    sum_of_sample = 0
-    len_sample = len(sample_list)
-    for i in sample_list:
-        sum_of_sample += i
-    return sum_of_sample/len_sample
+    mean = sum(sample_list) / len(sample_list)
+    return mean
     
 
 def median(sample_list):
@@ -27,3 +25,21 @@ def mode(sample_list):
     sorted_list = Counter(sorted(sample_list))
     mode = sorted_list.most_common(1)
     return mode
+    
+def variance(sample_list):
+    mean = sum(sample_list) / len(sample_list)
+    squared_differences = [(x - mean)**2 for x in sample_list]
+    variance = sum(squared_differences) / len(sample_list)
+    return variance
+    
+def stdev(sample_list):
+    mean = sum(sample_list) / len(sample_list)
+    squared_differences = [(x - mean)**2 for x in sample_list]
+    variance = sum(squared_differences) / len(sample_list)
+    stdev = variance // 2
+    return stdev
+        
+    
+    
+print(variance(sample_list))    
+print(stdev(sample_list))
