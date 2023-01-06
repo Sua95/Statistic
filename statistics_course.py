@@ -5,7 +5,6 @@ Created on Sun Jan  1 21:17:45 2023
 @author: Sua
 """
 from collections import Counter
-import statistics
 
 
 #group_1 = [5 ,10, 9, 10, 9, 8]
@@ -77,15 +76,39 @@ def sample_covariance(x, y):
         mult_array.append(array_x[i]*array_y[i]) 
     result = sum(mult_array) / (len(mult_array)-1)
     return result
+
+def population_covariance(x, y):
+    x_mean, y_mean = sum(x)/len(x), sum(y)/len(y)
+    array_x = []
+    array_y = []
+    mult_array = []
+    for i in x:
+        array_x.append(i-x_mean)
+    for i in y:
+        array_y.append(i-y_mean)
+    for i in range(len(array_x)):
+        mult_array.append(array_x[i]*array_y[i]) 
+    result = sum(mult_array) / len(mult_array)
+    return result
+
+def correlation_coefficient(covariance, stdev, data_1, data_2):
+    cov = sample_covariance(data_1, data_2)
+    stdev_x, stdev_y = sample_stdev(data_1), sample_stdev(data_2)
+    result = cov / (stdev_x * stdev_y)
+    return round(result, 3)
     
 
 
-print(sample_covariance(sqrft, price))
 
 
 
 
-
+'''def fancy(mean, array):
+    mean = mean(array)
+    return mean
+    
+print(fancy(mean, sqrft))'''
+print(correlation_coefficient(sample_covariance, sample_stdev, sqrft, price))
 
 
 
