@@ -12,7 +12,17 @@ Ask the user for two numbers between 1 and 100. Then count from the
 lower number to the higher number. Print the results to the screen.
 '''
 
-input_one, input_two = int(input("Chose a number ")), int(input("Chose another number "))
+#num_one, num_two = int(input("Chose a number ")), int(input("Chose another number "))
+
+def countin_difference(num_one, num_two):
+    if num_one < num_two:
+        while num_one <= num_two:
+            print(num_one)
+            num_one += 1
+    elif num_one > num_two:
+        while num_two <= num_one:
+            print(num_two)
+            num_two += 1
 
 
 
@@ -22,6 +32,12 @@ Ask the user to input a string and then print it out to the screen in
 reverse order (use a for loop).
 '''
 
+#name = input("Put your name --> ")
+
+def print_backwards(user_string):
+    for l in range(len(user_string)-1, -1, -1):
+        print(user_string[l])
+    
 
 
 '''
@@ -31,18 +47,42 @@ table for that number.
 '''
 
 
+def multiplications_w_input():
+    user_num = int(input("What times table did you want to see?: "))
+    mul_array = []
+    for i in range(0,10):
+        mul_array.append(user_num*(i+1))
+        print(f'{user_num} by {i+1} equals {user_num * (i + 1)}')
+        
+
 '''
 Question 4
 Can you amend the solution to question 3 so that it just prints out all
 times tables between 1 and 12? (no  need to ask user for input)
 '''
 
+multiplicator = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] 
+
+def times_table(multiplicator, number):
+    for mult in multiplicator:
+        print(" ")
+        for num in number:
+            print(f'{num} x {mult} = {num * mult}', end=" ")
+            
 
 '''
 Question 5
 Ask the user to input a sequence of numbers. Then calculate the mean
 and print the result
 '''
+
+user_array = []
+
+for i in range(5):
+    user_array.append(int(input('Choose 5 numbers: ')))
+    
+print(f'the mean is: {sum(user_array) / len(user_array)}')
 
 
 '''
