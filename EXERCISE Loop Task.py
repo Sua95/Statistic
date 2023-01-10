@@ -168,18 +168,17 @@ in a list named even.
 even_list = []
 odd_list = []
 
-
-for n in range(1,101):
-    if n % 2 == 0:
-        even_list.append(n)
-    else:
-        odd_list.append(n)
-        
-print(even_list)
-print(odd_list)
-
-
-
+def add_odds_and_evens(even_list, odd_list):
+    for n in range(1,101):
+        if n % 2 == 0:
+            even_list.append(n)
+        elif n % 2 != 0:
+            odd_list.append(n)       
+    print(even_list)
+    print(odd_list)
+    
+    
+# Pretty useful that .append function
 
 
 
