@@ -16,8 +16,8 @@ for char in text:
 
 x, y = zip(*just_chars.items())
 
-plt.bar(x, y)
-plt.show()
+#plt.bar(x, y)
+#plt.show()
 
 
 squares_to_ten = [x**2 for x in range(1,11)]
@@ -26,5 +26,18 @@ raw_count = dict(Counter(text.lower()))
 
 clean_count = {k:v for k, v in raw_count.items() if k.isalpha()}
 
-print(raw_count)
-print(clean_count)
+
+f = open("new_text.txt", "w")
+
+
+f.write("New lines ")
+f.write("New lines ")
+f.write("New lines ")
+f.write("New lines ")
+f.close()
+
+
+d = open("new_text.txt", "r")
+
+print(d.read())
+d.close()
