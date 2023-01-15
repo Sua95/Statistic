@@ -98,22 +98,6 @@ def correlation_coefficient(covariance, stdev, data_1, data_2):
     return round(result, 3)
     
 
-def z_score(data, mean, stdev):
-    array_minus_mean = []
-    zscore = []
-    data_stdev = stdev(data)
-    data_mean = mean(data)
-    for i in data:
-        array_minus_mean.append(i-data_mean)
-    for i in array_minus_mean:
-        zscore.append(i / data_stdev)
-    return zscore
-        
-    
-        
-    
-    
-print(z_score(price, mean, sample_stdev))
 
 
 

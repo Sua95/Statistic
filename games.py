@@ -28,10 +28,14 @@ for char in text:
 #clean_count = {k:v for k, v in raw_count.items() if k.isalpha()}
 
 
-w = 'camera'
-number = 123
-number_float = 12.5
-a_list = [1, 2, 3]
-mix_list = [1, 'a', 12.5]
-a_dictionary = {"a": 1, 'b':2, 'c':3}
-a_tuple = (1,2,3)
+alphabet = {1: 'a', 2:'b', 3:'c'}
+changes = 1
+encript_alph = {}
+
+
+list_alph = [k for k, v in alphabet.items()]
+list_nums = [v for k, v in alphabet.items()]
+
+encript_alph[1] = 'b'
+
+print(encript_alph)
