@@ -27,15 +27,24 @@ for char in text:
 
 #clean_count = {k:v for k, v in raw_count.items() if k.isalpha()}
 
+numerical_list = [2, 5, 3, 7, 4]
 
-alphabet = {1: 'a', 2:'b', 3:'c'}
-changes = 1
-encript_alph = {}
+target = 10
 
+def two_sum(nums, target):
+    for i in range(len(nums)):
+        for j in range(i+1, len(nums)):
+            if nums[i] + nums[j] == target:
+                return [i, j]
+    return [-1, -1]
 
-list_alph = [k for k, v in alphabet.items()]
-list_nums = [v for k, v in alphabet.items()]
+def two_sum_hash(nums, target):
+    num_to_index = {}
+    for i in range(len(nums)):
+        if target - nums[i] in num_to_index:
+            print(num_to_index)
+            return [num_to_index[target - nums[i]], i]
+        num_to_index[nums[i]] = i
+    return [-1, -1]
 
-encript_alph[1] = 'b'
-
-print(encript_alph)
+print(two_sum_hash(numerical_list, target))
