@@ -91,12 +91,7 @@ def population_covariance(x, y):
     result = sum(mult_array) / len(mult_array)
     return result
 
-def correlation_coefficient(covariance, stdev, data_1, data_2):
-    cov = sample_covariance(data_1, data_2)
-    stdev_x, stdev_y = sample_stdev(data_1), sample_stdev(data_2)
-    result = cov / (stdev_x * stdev_y)
-    return round(result, 3)
-    
+
 
 
 

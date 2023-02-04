@@ -27,7 +27,7 @@ for char in text:
 
 #clean_count = {k:v for k, v in raw_count.items() if k.isalpha()}
 
-numerical_list = [2, 5, 3, 7, 4]
+numerical_list = [2, 5, 3, 4, 7]
 
 target = 10
 
@@ -47,4 +47,50 @@ def two_sum_hash(nums, target):
         num_to_index[nums[i]] = i
     return [-1, -1]
 
-print(two_sum_hash(numerical_list, target))
+#This solution ask in every iteration if the target minus the current loop i wich is the necesary amount to reach the target
+#is on the dictionaty, and then return same index of target minus the curren index and the actual index
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
